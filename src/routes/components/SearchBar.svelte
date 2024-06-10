@@ -37,6 +37,7 @@
       fields: ['formatted_address', 'geometry', 'name'],
     });
     autocomplete.addListener('place_changed', async () => {
+      console.log('PLACE CHANGED')
       const place = autocomplete.getPlace();
       if (!place.geometry || !place.geometry.location) {
         textFieldElement.value = '';
@@ -58,6 +59,13 @@
         textFieldElement.value = place.formatted_address;
       }
     });
+    map.addListener("rightclick", (mapsMouseEvent: {
+      latLng: any
+    }) => {
+      console.log('RIGHT CLICK')
+      console.log({lat: mapsMouseEvent.latLng.lat(), lng: mapsMouseEvent.latLng.lng()})
+      location = mapsMouseEvent.latLng
+    })
   });
 </script>
 

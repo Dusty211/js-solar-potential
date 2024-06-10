@@ -27,8 +27,8 @@
 
   const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
   const defaultPlace = {
-    name: 'Rinconada Library',
-    address: '1213 Newell Rd, Palo Alto, CA 94303',
+    name: `Capital One Arena`,
+    address: '601 F St NW, Washington, DC 20004',
   };
   let location: google.maps.LatLng | undefined;
   const zoom = 19;
@@ -71,6 +71,16 @@
       streetViewControl: false,
       zoomControl: false,
     });
+    // map.addListener("rightclick", (mapsMouseEvent: {
+    //   latLng: any
+    // }) => {
+    //   console.log('RIGHT CLICK', )
+    //   // console.log({
+    //   //   map: map!!,
+    //   //   geometryLibrary: geometryLibrary!!
+    //   // })
+    //   location = mapsMouseEvent.latLng
+    // })
   });
 </script>
 
